@@ -198,8 +198,8 @@ img { display: block; max-width: 100%; height: auto; }
   .gallery__item--wide { grid-column: span 2; }
 }
 @media (max-width: 600px) {
-  .gallery { grid-template-columns: 1fr; }
-  .gallery__item--wide { grid-column: auto; }
+  .gallery, .gallery--two { grid-template-columns: 1fr; }
+  .gallery__item--wide, .gallery--two .gallery__item--wide { grid-column: auto; }
 }
 
 /* ---------- Contact ---------- */
