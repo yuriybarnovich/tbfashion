@@ -87,14 +87,30 @@ img { display: block; max-width: 100%; height: auto; }
   overflow: hidden;
   background: #1a1916;
 }
+.hero__media {
+  position: absolute; inset: 0;
+  will-change: transform;
+}
 .hero__img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: 50% 18%;
 }
+.hero__shade {
+  position: absolute; inset: 0;
+  background: #0e0d0b;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero__line {
+  display: block; overflow: hidden;
+  padding-bottom: .14em; margin-bottom: -.14em;
+}
+.hero__line > span { display: block; }
 .hero__overlay {
   position: absolute; inset: 0;
+  z-index: 1;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 0 var(--gutter) clamp(40px, 8vh, 96px);
   color: #fff;
@@ -188,6 +204,7 @@ img { display: block; max-width: 100%; height: auto; }
   transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .5s ease;
 }
 .gallery__item:hover img { transform: scale(1.03); }
+.gallery__item:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
 @media (max-width: 640px) {
   .stats__list { grid-template-columns: repeat(2, 1fr); }
 }
@@ -268,6 +285,39 @@ img { display: block; max-width: 100%; height: auto; }
   .lightbox__figure { padding: 48px 8px; }
 }
 body.no-scroll { overflow: hidden; }
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__img {
+    transform: scale(1.08);
+    animation: kenburns 9s cubic-bezier(.2,.6,.2,1) forwards;
+  }
+  @keyframes kenburns { to { transform: scale(1); } }
+
+  .hero__line > span {
+    transform: translateY(112%);
+    animation: line-up 1.1s cubic-bezier(.2,.7,.1,1) forwards;
+    animation-delay: .35s;
+  }
+  .hero__line:nth-child(2) > span { animation-delay: .5s; }
+  .hero__kicker > span {
+    display: inline-block; opacity: 0;
+    animation: fade-in 1s ease forwards;
+    animation-delay: .95s;
+  }
+  @keyframes line-up { to { transform: none; } }
+  @keyframes fade-in { to { opacity: 1; } }
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+  }
+  .js .reveal.is-visible { opacity: 1; transform: none; }
+
+  .lightbox__img { transform-origin: center; will-change: transform; }
+  .lightbox--closing { opacity: 0; transition: opacity .4s ease; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

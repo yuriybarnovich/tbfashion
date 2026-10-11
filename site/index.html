@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
   <link rel="preload" as="image" href="img/hero-1200.webp" imagesrcset="img/hero-1200.webp 1200w, img/hero-2000.webp 2000w, img/hero-2600.webp 2600w" imagesizes="100vw">
 </head>
 <body>
@@ -41,15 +41,18 @@
 <main id="top">
 
   <section class="hero">
+    <div class="hero__media">
     <img class="hero__img"
          src="img/hero-1200.webp"
          srcset="img/hero-1200.webp 1200w, img/hero-2000.webp 2000w, img/hero-2600.webp 2600w"
          sizes="100vw"
          alt="Tetyana Barnovych"
          fetchpriority="high">
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__overlay">
-      <p class="hero__kicker">Model</p>
-      <h1 class="hero__name">Tetyana<br>Barnovych</h1>
+      <p class="hero__kicker"><span>Model</span></p>
+      <h1 class="hero__name"><span class="hero__line"><span>Tetyana</span></span><span class="hero__line"><span>Barnovych</span></span></h1>
       <a class="hero__scroll" href="#stats" aria-label="Scroll to stats">
         <span></span>
       </a>
@@ -127,6 +130,6 @@
   <p class="lightbox__counter" aria-live="polite"></p>
 </div>
 
-<script src="script.js?v=3" defer></script>
+<script src="script.js?v=4" defer></script>
 </body>
 </html>
