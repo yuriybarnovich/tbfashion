@@ -13,14 +13,13 @@ cd site && python3 -m http.server 8765
 ```
 Відкрити http://localhost:8765/
 
-## Деплой на HostPro
-1. У панелі HostPro додати домен `barnovych.fashion` (мультисайт-тариф → "Домени" → додати, папка `barnovych.fashion/public_html` або аналогічна).
-2. Залити вміст `site/` (включно з `.htaccess` та `img/`) у document root домену через FTP/SFTP або файловий менеджер панелі.
-3. Випустити безкоштовний SSL (Let's Encrypt) у панелі; після цього розкоментувати редірект на HTTPS у `.htaccess`.
+## Деплой
+Хостинг — GitHub Pages, репозиторій `yuriybarnovich/tbfashion`.
+Кожен пуш у `main` запускає `.github/workflows/deploy.yml`, який публікує папку `site/`.
+Статус: https://github.com/yuriybarnovich/tbfashion/actions
 
-## DNS на GoDaddy
-Варіант A (простіший): змінити nameservers домену на NS HostPro (їх видно в панелі / листі про активацію).
-Варіант B: лишити DNS на GoDaddy і додати A-запис `@` → IP сервера HostPro та CNAME `www` → `barnovych.fashion`.
+Домен `barnovych.fashion` прив'язаний через `site/CNAME` і налаштування Pages (HTTPS примусовий).
+DNS на GoDaddy: чотири A-записи `@` → 185.199.108.153 / 109 / 110 / 111, CNAME `www` → `barnovych.fashion`.
 
 ## Оновлення контенту
 - Параметри/контакти — у `site/index.html` та `site/ua/index.html`, секції `#stats` і `#contact` (правити обидві мови).
