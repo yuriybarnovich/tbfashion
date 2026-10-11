@@ -225,14 +225,23 @@ img { display: block; max-width: 100%; height: auto; }
 .contact__list { list-style: none; margin: 0; padding: 0; }
 .contact__list li { margin: 0 0 10px; }
 .contact__list a {
+  display: inline-flex; align-items: center; gap: .55em;
   font-family: var(--serif);
   font-size: clamp(1.6rem, 3.2vw, 2.4rem);
   line-height: 1.2;
+}
+.contact__list a span {
   border-bottom: 1px solid transparent;
   transition: border-color .3s;
 }
-.contact__list a:hover { border-color: var(--ink); }
-.contact__handle { font-size: .6em; color: var(--ink-soft); font-family: var(--sans); letter-spacing: .04em; margin-left: .35em; }
+.contact__list a:hover span { border-color: var(--ink); }
+.contact__icon {
+  flex: 0 0 auto;
+  width: .9em; height: .9em;
+  color: var(--ink-soft);
+  transition: color .3s;
+}
+.contact__list a:hover .contact__icon { color: var(--ink); }
 
 /* ---------- Footer ---------- */
 .footer {
