@@ -3,6 +3,19 @@
 
   document.getElementById('year').textContent = String(new Date().getFullYear());
 
+  // Nav: white over the hero, solid cream bar once the hero scrolls away
+  var nav = document.querySelector('.nav');
+  var hero = document.querySelector('.hero');
+  if (nav && hero) {
+    var setNav = function () {
+      var past = hero.getBoundingClientRect().bottom <= nav.offsetHeight;
+      nav.classList.toggle('nav--solid', past);
+    };
+    setNav();
+    window.addEventListener('scroll', setNav, { passive: true });
+    window.addEventListener('resize', setNav);
+  }
+
   var items = Array.prototype.slice.call(document.querySelectorAll('.gallery__item'));
   if (!items.length) return;
 
