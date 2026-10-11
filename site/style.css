@@ -232,6 +232,7 @@ img { display: block; max-width: 100%; height: auto; }
   transition: border-color .3s;
 }
 .contact__list a:hover { border-color: var(--ink); }
+.contact__handle { font-size: .6em; color: var(--ink-soft); font-family: var(--sans); letter-spacing: .04em; margin-left: .35em; }
 
 /* ---------- Footer ---------- */
 .footer {
