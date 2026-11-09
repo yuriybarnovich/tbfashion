@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=10">
-  <link rel="preload" as="image" href="../img/hero-1200.webp" imagesrcset="../img/hero-1200.webp 1200w, ../img/hero-2000.webp 2000w, ../img/hero-2600.webp 2600w" imagesizes="100vw">
+  <link rel="stylesheet" href="../style.css?v=11">
+  <link rel="preload" as="image" href="../img/hero-video-poster.webp">
 </head>
 <body>
 
@@ -43,14 +43,15 @@
 
   <section class="hero">
     <div class="hero__media">
-    <img class="hero__img"
-         src="../img/hero-1200.webp"
-         srcset="../img/hero-1200.webp 1200w, ../img/hero-2000.webp 2000w, ../img/hero-2600.webp 2600w"
-         sizes="100vw"
-         alt="Тетяна Барнович"
-         fetchpriority="high">
+      <video class="hero__video" muted loop playsinline preload="none"
+             poster="../img/hero-video-poster.webp" aria-hidden="true">
+        <source src="../video/hero.mp4" type="video/mp4">
+      </video>
+      <button class="hero__playback" type="button" aria-label="Відтворити відео"
+              data-pause="Призупинити відео" data-play="Відтворити відео" hidden>
+        <span class="hero__playback-icon" aria-hidden="true">▶</span>
+      </button>
     </div>
-    <div class="hero__shade" aria-hidden="true"></div>
     <div class="hero__overlay">
       <p class="hero__kicker"><span>Модель</span></p>
       <h1 class="hero__name"><span class="hero__line"><span>Тетяна</span></span><span class="hero__line"><span>Барнович</span></span></h1>
@@ -76,6 +77,17 @@
 
   <section class="section portfolio" id="portfolio">
     <h2 class="section__title">Портфоліо</h2>
+
+    <div class="gallery gallery--featured" data-shoot="4" id="shoot-4">
+      <a class="gallery__item" href="../img/november-8173-1600.webp" data-w="4000" data-h="5333"><img loading="lazy" src="../img/november-8173-480.webp" srcset="../img/november-8173-480.webp 480w, ../img/november-8173-960.webp 960w, ../img/november-8173-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у бордовому береті" width="4000" height="5333"></a>
+      <a class="gallery__item" href="../img/november-8174-1600.webp" data-w="4000" data-h="5333"><img loading="lazy" src="../img/november-8174-480.webp" srcset="../img/november-8174-480.webp 480w, ../img/november-8174-960.webp 960w, ../img/november-8174-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у бордовому береті" width="4000" height="5333"></a>
+      <a class="gallery__item" href="../img/november-8177-1600.webp" data-w="3510" data-h="4680"><img loading="lazy" src="../img/november-8177-480.webp" srcset="../img/november-8177-480.webp 480w, ../img/november-8177-960.webp 960w, ../img/november-8177-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у бордовому береті" width="3510" height="4680"></a>
+      <a class="gallery__item" href="../img/november-8179-1600.webp" data-w="3809" data-h="5079"><img loading="lazy" src="../img/november-8179-480.webp" srcset="../img/november-8179-480.webp 480w, ../img/november-8179-960.webp 960w, ../img/november-8179-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у бордовому береті" width="3809" height="5079"></a>
+      <a class="gallery__item" href="../img/november-8181-1600.webp" data-w="3280" data-h="4373"><img loading="lazy" src="../img/november-8181-480.webp" srcset="../img/november-8181-480.webp 480w, ../img/november-8181-960.webp 960w, ../img/november-8181-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у червоній шкіряній куртці" width="3280" height="4373"></a>
+      <a class="gallery__item" href="../img/november-8185-1600.webp" data-w="3587" data-h="4782"><img loading="lazy" src="../img/november-8185-480.webp" srcset="../img/november-8185-480.webp 480w, ../img/november-8185-960.webp 960w, ../img/november-8185-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у червоній шкіряній куртці" width="3587" height="4782"></a>
+      <a class="gallery__item gallery__item--landscape" href="../img/november-8182-1600.webp" data-w="5333" data-h="4000"><img loading="lazy" src="../img/november-8182-480.webp" srcset="../img/november-8182-480.webp 480w, ../img/november-8182-960.webp 960w, ../img/november-8182-1600.webp 1600w" sizes="(min-width: 1280px) 780px, (min-width: 600px) 90vw, 100vw" alt="Тетяна Барнович, студійний портрет у червоній шкіряній куртці" width="5333" height="4000"></a>
+      <a class="gallery__item" href="../img/november-8226-1600.webp" data-w="4000" data-h="6000"><img loading="lazy" src="../img/november-8226-480.webp" srcset="../img/november-8226-480.webp 480w, ../img/november-8226-960.webp 960w, ../img/november-8226-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, студійний портрет у червоній шкіряній куртці" width="4000" height="6000"></a>
+    </div>
 
     <div class="gallery" data-shoot="1" id="shoot-1">
       <a class="gallery__item" href="../img/s1-02-1600.webp" data-w="4000" data-h="6000"><img loading="lazy" src="../img/s1-02-480.webp" srcset="../img/s1-02-480.webp 480w, ../img/s1-02-960.webp 960w, ../img/s1-02-1600.webp 1600w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Тетяна Барнович, зйомка на балконі" width="4000" height="6000"></a>
@@ -133,6 +145,6 @@
   <p class="lightbox__counter" aria-live="polite"></p>
 </div>
 
-<script src="../script.js?v=4" defer></script>
+<script src="../script.js?v=5" defer></script>
 </body>
 </html>
